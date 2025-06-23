@@ -11,6 +11,8 @@ public class CuttingCounter : BaseCounter
     private int cuttingProgress;
 
     public event EventHandler<OnProgressChangedEventArgs> OnProgressChanged;
+
+    public event EventHandler OnCut;
     public class OnProgressChangedEventArgs: EventArgs
     {
         public float progressNormalized;
@@ -72,6 +74,8 @@ public class CuttingCounter : BaseCounter
         if (HasKitchenObject() && HasRecipe(GetKitchenObject().GetKitchenObjectSO()))
         {
             cuttingProgress++;
+
+            OnCut?.Invoke(this, OnProgressChangedEventArgs.Empty);
 
             CuttingRecipeSO cuttingRecipeSO = whichCuttingRecipe(GetKitchenObject().GetKitchenObjectSO());
 
