@@ -24,16 +24,28 @@ public class StoverCounterVisual : MonoBehaviour
         OnorOff();
 
 
-        if(e.state ==  StoveCounter.State.Fried || e.state == StoveCounter.State.Burnt)
+       if(e.state ==  StoveCounter.State.Fried)
         {
             var mainModule = particleSystem.main;
             mainModule.startSpeed = 9f;
+        }
+        else if (e.state == StoveCounter.State.Idle)
+        {
+            var mainModule = particleSystem.main;
+            mainModule.startSpeed = 4f;
+        }
+        else if (e.state == StoveCounter.State.Burnt)
+        {
+            var mainModule = particleSystem.main;
+            mainModule.startSpeed = 15f;
         }
         else
         {
             var mainModule = particleSystem.main;
             mainModule.startSpeed = 4f;
+
         }
+       
       
 
     }
