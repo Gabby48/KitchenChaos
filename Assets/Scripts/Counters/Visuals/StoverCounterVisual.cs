@@ -13,6 +13,7 @@ public class StoverCounterVisual : MonoBehaviour
     bool showVisual;
     bool smokeVisual;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +41,7 @@ public class StoverCounterVisual : MonoBehaviour
         else if (e.state == StoveCounter.State.Burnt)
         {
             particleSpeed = 15f;
+            
         }
         else
         {
@@ -74,6 +76,8 @@ public class StoverCounterVisual : MonoBehaviour
     {
         smoke.SetActive(smokeVisual);
     }
+
+
 
 
 }
