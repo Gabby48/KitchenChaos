@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEditorInternal;
 using UnityEngine; 
 using UnityEngine.UIElements;
 
@@ -46,7 +45,7 @@ public class Player : MonoBehaviour ,IKitchenObjectParent
 
     private void GameInput_OnInteractAction(object sender, System.EventArgs e)
     {
-
+        Debug.Log("interaction pressed");
 
         if (selectedCounter != null)
         {
@@ -175,6 +174,7 @@ public class Player : MonoBehaviour ,IKitchenObjectParent
 
 
                     SetSelectedCounter(baseCounter);
+                    
 
 
 

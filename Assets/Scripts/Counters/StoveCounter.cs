@@ -42,7 +42,7 @@ public class StoveCounter : BaseCounter, IHasProgress
     // Update is called once per frame
     private void Update()
     {
-        
+        Debug.Log(state);
 
         if (HasKitchenObject())
         {
@@ -126,6 +126,8 @@ public class StoveCounter : BaseCounter, IHasProgress
     public override void Interact(Player player)
     {
 
+        
+
         if (!HasKitchenObject())
         {
             if (player.HasKitchenObject())
@@ -140,9 +142,11 @@ public class StoveCounter : BaseCounter, IHasProgress
 
                     state = State.Frying;
                     fryingTimer = 0f;
+                    
 
                     OnStateChanged?.Invoke(this, new OnStateChangedEventArgs()
                     {
+                        
 
                         state = state
 

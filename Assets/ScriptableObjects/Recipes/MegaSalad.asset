@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd92a5ad2e7aae546a461e5a5ea44557, type: 3}
+  m_Name: MegaSalad
+  m_EditorClassIdentifier: 
+  kitchenObjectSOList:
+  - {fileID: 11400000, guid: 9bf37a0771daa6941b2ebe7cdf4f292d, type: 2}
+  - {fileID: 11400000, guid: 3bec2619c7bdd3647abf24045efd72dd, type: 2}
+  - {fileID: 11400000, guid: ab66ab96d2f3ea24eb5901e0f157d84a, type: 2}
+  - {fileID: 11400000, guid: 41feed7ebde43c64d80b2636a00f3adc, type: 2}
+  recipeName: MegaSalad
