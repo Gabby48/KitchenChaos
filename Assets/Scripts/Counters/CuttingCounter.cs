@@ -8,6 +8,8 @@ public class CuttingCounter : BaseCounter, IHasProgress
 {
     [SerializeField] private CuttingRecipeSO[] cuttingRecipeSOArray;
 
+    public static event EventHandler OnAnyCut;
+
     private int cuttingProgress;
 
     public event EventHandler<IHasProgress.OnProgressChangedEventArgs> OnProgressChanged;
@@ -80,7 +82,8 @@ public class CuttingCounter : BaseCounter, IHasProgress
         {
             cuttingProgress++;
 
-            OnCut?.Invoke(this, IHasProgress.OnProgressChangedEventArgs.Empty);
+            OnAnyCut?.Invoke(this,EventArgs.Empty);
+            OnCut?.Invoke(this, EventArgs.Empty);
 
             CuttingRecipeSO cuttingRecipeSO = whichCuttingRecipe(GetKitchenObject().GetKitchenObjectSO());
 

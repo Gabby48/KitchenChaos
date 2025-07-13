@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: ../Kitchen Chaos/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638879891892115503
+  lastModified: 638879910130818329
   FileSizes:
   - Name: Desktop
-    Value: 940384
+    Value: 1000512
   Exists: 1
 --- !u!114 &-8204348294812271353
 MonoBehaviour:
@@ -47,6 +47,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 843
+--- !u!114 &-5536977282185947830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Drop
+  m_EditorClassIdentifier: 
+  Path: event:/Drop
+  Guid:
+    Data1: -107041946
+    Data2: 1298907033
+    Data3: 1658801038
+    Data4: -1570800510
+  Banks:
+  - {fileID: -8517843902980726384}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 234
 --- !u!114 &-4590380553618975743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,10 +89,10 @@ MonoBehaviour:
   Path: ../Kitchen Chaos/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638879891892135502
+  lastModified: 638879910130838336
   FileSizes:
   - Name: Desktop
-    Value: 864
+    Value: 1018
   Exists: 1
 --- !u!114 &-964794055926021620
 MonoBehaviour:
@@ -113,13 +140,98 @@ MonoBehaviour:
   - {fileID: -964794055926021620}
   - {fileID: -8204348294812271353}
   - {fileID: 8047696662164145594}
+  - {fileID: 5494620819229538598}
+  - {fileID: 575591649634198745}
+  - {fileID: -5536977282185947830}
+  - {fileID: 4500367992963438617}
   EditorParameters: []
   MasterBanks:
   - {fileID: -8517843902980726384}
   StringsBanks:
   - {fileID: -4590380553618975743}
-  cacheTime: 638879891892135502
+  cacheTime: 638879910130838336
   cacheVersion: 131609
+--- !u!114 &575591649634198745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Pickup
+  m_EditorClassIdentifier: 
+  Path: event:/Pickup
+  Guid:
+    Data1: -1327904820
+    Data2: 1205532512
+    Data3: -930293313
+    Data4: 545101507
+  Banks:
+  - {fileID: -8517843902980726384}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 187
+--- !u!114 &4500367992963438617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Trash
+  m_EditorClassIdentifier: 
+  Path: event:/Trash
+  Guid:
+    Data1: -1627948660
+    Data2: 1151769888
+    Data3: 75774605
+    Data4: 279386286
+  Banks:
+  - {fileID: -8517843902980726384}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1500
+--- !u!114 &5494620819229538598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Chop
+  m_EditorClassIdentifier: 
+  Path: event:/Chop
+  Guid:
+    Data1: 1610718082
+    Data2: 1215011269
+    Data3: -982254415
+    Data4: 1614998777
+  Banks:
+  - {fileID: -8517843902980726384}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 221
 --- !u!114 &8047696662164145594
 MonoBehaviour:
   m_ObjectHideFlags: 0

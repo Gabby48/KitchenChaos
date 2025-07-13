@@ -23,6 +23,7 @@ public class Player : MonoBehaviour ,IKitchenObjectParent
     private BaseCounter selectedCounter;
 
     public event EventHandler<OnSelectedCounterChangedEventArgs> OnSelectedCounterChanged;
+    public event EventHandler OnPickUp;
     public class OnSelectedCounterChangedEventArgs : EventArgs
     {
         public BaseCounter selectedCounter;
@@ -221,6 +222,11 @@ public class Player : MonoBehaviour ,IKitchenObjectParent
     public void SetKitchenObject(KitchenObject kitchenObject)
     {
         this.kitchenObject = kitchenObject;
+        if (kitchenObject != null) 
+        {
+            OnPickUp?.Invoke(this, EventArgs.Empty);
+        }
+        
 
     }
 
