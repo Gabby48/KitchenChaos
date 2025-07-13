@@ -23,7 +23,7 @@ public class StoverCounterVisual : MonoBehaviour
 
     private void StoveCounter_OnStateChanged(object sender, StoveCounter.OnStateChangedEventArgs e)
     {
-        Debug.Log("state changed");
+        
         showVisual = e.state == StoveCounter.State.Frying || e.state == StoveCounter.State.Fried || e.state == StoveCounter.State.Burnt;
         smokeVisual = e.state == StoveCounter.State.Burnt;
         OnorOff();

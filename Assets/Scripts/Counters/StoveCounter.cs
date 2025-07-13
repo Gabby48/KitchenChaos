@@ -42,7 +42,7 @@ public class StoveCounter : BaseCounter, IHasProgress
     // Update is called once per frame
     private void Update()
     {
-        Debug.Log(state);
+       
 
         if (HasKitchenObject())
         {

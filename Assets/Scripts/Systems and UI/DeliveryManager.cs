@@ -16,6 +16,9 @@ public class DeliveryManager : MonoBehaviour
 
     public event EventHandler OnRecipeSpawned;
     public event EventHandler OnRecipeDelivered;
+    public event EventHandler OnDeliverySuccess;
+    public event EventHandler OnDeliveryFailure;
+
 
     private void Awake()
     {
@@ -40,7 +43,7 @@ public class DeliveryManager : MonoBehaviour
             {
                 OrderRecipeSO waitingRecipeSO = recipeListSO.recipeSOList[UnityEngine.Random.Range(0, recipeListSO.recipeSOList.Count)];
                 waitingRecipeSOList.Add(waitingRecipeSO);
-                Debug.Log(waitingRecipeSO.recipeName);
+                
 
                 OnRecipeSpawned?.Invoke(this, EventArgs.Empty);
             }
@@ -83,12 +86,15 @@ public class DeliveryManager : MonoBehaviour
                     Debug.Log("Recipe Correct");
                     waitingRecipeSOList.RemoveAt(i);
                     OnRecipeDelivered?.Invoke(this, EventArgs.Empty);
+                    OnDeliverySuccess?.Invoke(this, EventArgs.Empty);
                     return;
                 }
                 
             }
         }
 
+
+        OnDeliveryFailure?.Invoke(this, EventArgs.Empty);
         Debug.Log("Recipe Not Delivered"); 
     }
 

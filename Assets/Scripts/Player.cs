@@ -45,7 +45,7 @@ public class Player : MonoBehaviour ,IKitchenObjectParent
 
     private void GameInput_OnInteractAction(object sender, System.EventArgs e)
     {
-        Debug.Log("interaction pressed");
+        
 
         if (selectedCounter != null)
         {
