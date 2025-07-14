@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: ../Kitchen Chaos/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638879910130818329
+  lastModified: 638880711012477447
   FileSizes:
   - Name: Desktop
-    Value: 1000512
+    Value: 1087392
   Exists: 1
 --- !u!114 &-8204348294812271353
 MonoBehaviour:
@@ -89,11 +89,65 @@ MonoBehaviour:
   Path: ../Kitchen Chaos/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638879910130838336
+  lastModified: 638880711012507439
   FileSizes:
   - Name: Desktop
-    Value: 1018
+    Value: 1094
   Exists: 1
+--- !u!114 &-4255717286858922219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Footsteps
+  m_EditorClassIdentifier: 
+  Path: event:/Footsteps
+  Guid:
+    Data1: 745584672
+    Data2: 1157518013
+    Data3: -1246670415
+    Data4: -1504273097
+  Banks:
+  - {fileID: -8517843902980726384}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 125
+--- !u!114 &-2016184600912927989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sizzle
+  m_EditorClassIdentifier: 
+  Path: event:/Sizzle
+  Guid:
+    Data1: -2075375407
+    Data2: 1162641326
+    Data3: 981222284
+    Data4: 1140438508
+  Banks:
+  - {fileID: -8517843902980726384}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7500
 --- !u!114 &-964794055926021620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,12 +198,14 @@ MonoBehaviour:
   - {fileID: 575591649634198745}
   - {fileID: -5536977282185947830}
   - {fileID: 4500367992963438617}
+  - {fileID: -2016184600912927989}
+  - {fileID: -4255717286858922219}
   EditorParameters: []
   MasterBanks:
   - {fileID: -8517843902980726384}
   StringsBanks:
   - {fileID: -4590380553618975743}
-  cacheTime: 638879910130838336
+  cacheTime: 638880711012507439
   cacheVersion: 131609
 --- !u!114 &575591649634198745
 MonoBehaviour:

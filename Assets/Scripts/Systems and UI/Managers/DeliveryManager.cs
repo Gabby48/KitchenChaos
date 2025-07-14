@@ -19,6 +19,8 @@ public class DeliveryManager : MonoBehaviour
     public event EventHandler OnDeliverySuccess;
     public event EventHandler OnDeliveryFailure;
 
+    public int recipesDeliveredAmount;
+
 
     private void Awake()
     {
@@ -83,10 +85,11 @@ public class DeliveryManager : MonoBehaviour
                 if(plateContentMatchesRecipe)
                 
                 {
-                    Debug.Log("Recipe Correct");
+                    
                     waitingRecipeSOList.RemoveAt(i);
                     OnRecipeDelivered?.Invoke(this, EventArgs.Empty);
                     OnDeliverySuccess?.Invoke(this, EventArgs.Empty);
+                    recipesDeliveredAmount++;
                     return;
                 }
                 
@@ -95,12 +98,17 @@ public class DeliveryManager : MonoBehaviour
 
 
         OnDeliveryFailure?.Invoke(this, EventArgs.Empty);
-        Debug.Log("Recipe Not Delivered"); 
+         
     }
 
     public List<OrderRecipeSO> GetWattingRecipeList ()
     {
         return waitingRecipeSOList;
+    }
+
+    public int GetRecipesDelivered()
+    {
+        return recipesDeliveredAmount;
     }
 
 }

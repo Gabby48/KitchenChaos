@@ -5,12 +5,17 @@ using FMODUnity;
 
 public class SoundManager : MonoBehaviour
 {
+    
+
     [SerializeField] private FMODUnity.EventReference deliverySuccess;
     [SerializeField] private FMODUnity.EventReference deliveryFailure;
     [SerializeField] private FMODUnity.EventReference chop;
     [SerializeField] private FMODUnity.EventReference pickUp;
     [SerializeField] private FMODUnity.EventReference drop;
     [SerializeField] private FMODUnity.EventReference trash;
+    [SerializeField] private FMODUnity.EventReference footsteps;
+
+
 
     public Vector3 cameraposition;
     
@@ -86,6 +91,10 @@ public class SoundManager : MonoBehaviour
 
     }
 
+    public void PlayFootsteps(Vector3 position)
+    {
+        PlaySound(footsteps, position);
+    }
     private void PlaySound(EventReference sound, Vector3 worldPos)
     {
         RuntimeManager.PlayOneShot(sound, worldPos);

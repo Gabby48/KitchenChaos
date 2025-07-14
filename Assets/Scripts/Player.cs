@@ -9,6 +9,7 @@ public class Player : MonoBehaviour ,IKitchenObjectParent
 {
 
     public static Player Instance { get; private set; }
+    
 
     [SerializeField] private float movement = 1f;
     [SerializeField] private GameInput gameInput;
@@ -16,6 +17,7 @@ public class Player : MonoBehaviour ,IKitchenObjectParent
     private bool isWalking;
     [SerializeField] private Transform kitchenObjectHoldPoint;
     [SerializeField] private KitchenObject kitchenObject;
+    [SerializeField] private GameHandler gameHandler;
 
 
     private Vector3 lastInteractDir;
@@ -31,6 +33,8 @@ public class Player : MonoBehaviour ,IKitchenObjectParent
 
     private void Awake()
     {
+        
+
         if (Instance != null)
         {
             Debug.LogError("THere is more than one player instance");
@@ -46,23 +50,29 @@ public class Player : MonoBehaviour ,IKitchenObjectParent
 
     private void GameInput_OnInteractAction(object sender, System.EventArgs e)
     {
+        if (!gameHandler.isGamePlaying()) return;
         
+            if (selectedCounter != null)
+            {
+                selectedCounter.Interact(this);
+            }
 
-        if (selectedCounter != null)
-        {
-            selectedCounter.Interact(this);
-        }
+        
+      
+        
 
     }
 
     private void GameInput_OnInteractAlternateAction(object sender, System.EventArgs e)
     {
 
-        if (selectedCounter != null)
-        {
-            selectedCounter.InteractAlternate(this);
-        }
+        if (!gameHandler.isGamePlaying()) return;
 
+        if (selectedCounter != null)
+            {
+                selectedCounter.InteractAlternate(this);
+            }
+        
 
     }
     // Update is called once per frame
