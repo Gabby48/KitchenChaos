@@ -60,14 +60,12 @@ public class SoundManager : MonoBehaviour
     private void DeliveryManager_OnDeliverySuccess(object sender, System.EventArgs e)
     {
         DeliveryCounter deliveryCounter = DeliveryCounter.Instance;
-        Debug.Log("Sound Played");
         PlaySound(deliverySuccess, deliveryCounter.transform.position);
     }
 
     private void DeliveryManager_OnDeliveryFailure(object sender, System.EventArgs e)
     {
         DeliveryCounter deliveryCounter = DeliveryCounter.Instance;
-        Debug.Log("Sound Played");
         PlaySound(deliveryFailure, deliveryCounter.transform.position);
     }
 

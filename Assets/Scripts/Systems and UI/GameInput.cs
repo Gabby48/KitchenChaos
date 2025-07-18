@@ -5,9 +5,12 @@ using UnityEngine;
 
 public class GameInput : MonoBehaviour
 {
+    public static GameInput instance {  get; private set; }
+
 
     public event EventHandler OnInteractAction;
     public event EventHandler OnInteractAlternateAction;
+    public event EventHandler OnPause;
 
     private PlayerInputActions playerInputActions;
 
@@ -21,6 +24,9 @@ public class GameInput : MonoBehaviour
 
         playerInputActions.Player.InteractAlternate.performed += InteractAlternate_performed;
 
+        playerInputActions.Player.Pause.performed += Pause_performed;
+
+        instance = this;
 
     }
 
@@ -39,6 +45,12 @@ public class GameInput : MonoBehaviour
 
 
 
+    }
+
+
+    private void Pause_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    {
+        OnPause?.Invoke(this, EventArgs.Empty);
     }
 
     public Vector2 GetMovementVectorNormalized()

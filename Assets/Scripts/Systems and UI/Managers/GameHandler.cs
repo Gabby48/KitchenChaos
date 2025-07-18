@@ -5,10 +5,15 @@ using System;
 
 public class GameHandler : MonoBehaviour
 {
-    public static GameHandler Instance {  get; private set; }
+    public static GameHandler Instance { get; private set; }
 
     public event EventHandler OnGameStateChanged;
+    public event EventHandler OnGamePaused;
+    public event EventHandler OnGameUnpaused;
 
+    [SerializeField] private GameOverUI gameOverUI;
+
+    [SerializeField] private StoveCounterSound stoveCounterSound;
 
     private enum State
     {
@@ -19,9 +24,12 @@ public class GameHandler : MonoBehaviour
     }
 
     private State state;
-    private float waitingtoStartTimer = 1f;
-    private float countdownTimer = 3f;
-    private float gamePlayingTimer = 120f;
+    [SerializeField] private float waitingtoStartTimer = 1f;
+    [SerializeField] private float countdownTimer = 3f;
+    [SerializeField] private float gamePlayingTimer;
+    [SerializeField] private float gamePlayingTimerMax = 20f;
+    private bool isGamePaused = false;
+
 
 
     private void Awake()
@@ -31,10 +39,26 @@ public class GameHandler : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
+        GameInput.instance.OnPause += GameInput_OnPause;
+        gameOverUI.OnStartOver += GameOverUI_OnStartOver;
+       
 
     }
+
+    private void GameOverUI_OnStartOver(object sender, EventArgs e)
+    {
+        Loader.Load(Loader.Scene.GameScene);
+        state = State.WaitingtoStart;
+    }
+
+    private void GameInput_OnPause(object sender, EventArgs e)
+    {
+        SwitchPauseState();
+    }
+
+
 
     // Update is called once per frame
     void Update()
@@ -47,6 +71,7 @@ public class GameHandler : MonoBehaviour
 
                 if (waitingtoStartTimer < 0f)
                 {
+                  
                     state = State.CountdowntoStart;
                     OnGameStateChanged?.Invoke(this, EventArgs.Empty);
                 }
@@ -59,6 +84,7 @@ public class GameHandler : MonoBehaviour
                 if (countdownTimer < 0f)
                 {
                     state = State.GamePlaying;
+                    gamePlayingTimer = gamePlayingTimerMax;
                     OnGameStateChanged?.Invoke(this, EventArgs.Empty);
                 }
                 break;
@@ -74,13 +100,18 @@ public class GameHandler : MonoBehaviour
                 break;
             case State.GameOver:
 
+                waitingtoStartTimer = 1f;
+
                 break;
 
         }
 
-
+        
 
     }
+
+
+
 
     public bool isGamePlaying()
     {
@@ -102,4 +133,33 @@ public class GameHandler : MonoBehaviour
     {
         return state == State.GameOver;
     }
+
+    public float GetPlayingTimerNormalized()
+    {
+        return  gamePlayingTimer/gamePlayingTimerMax;
+    }
+ 
+
+
+    public  void SwitchPauseState()
+    {
+        
+        isGamePaused = !isGamePaused;
+        if (isGamePaused) 
+        {
+            OnGamePaused?.Invoke(this, EventArgs.Empty);
+            Time.timeScale = 0f;
+           
+            
+        }
+        else
+        {
+            OnGameUnpaused?.Invoke(this, EventArgs.Empty);
+            Time.timeScale = 1f;
+            
+        }
+
+    }
+
+   
 }
