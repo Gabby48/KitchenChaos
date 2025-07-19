@@ -16,6 +16,10 @@ public class CuttingCounter : BaseCounter, IHasProgress
 
     public event EventHandler OnCut;
    
+    new public static void ResetStaticData()
+    {
+        OnAnyCut = null;
+    }
 
     public override void Interact(Player player)
     {

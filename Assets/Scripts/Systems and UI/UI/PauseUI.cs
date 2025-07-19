@@ -8,6 +8,7 @@ public class PauseUI : MonoBehaviour
 {
     [SerializeField] private Button resumeButton;
     [SerializeField] private Button mainMenuButton;
+    [SerializeField] private Button optionsButton;
 
     private void Awake()
     {
@@ -22,6 +23,12 @@ public class PauseUI : MonoBehaviour
             GameHandler.Instance.SwitchPauseState();
 
         });
+
+        optionsButton.onClick.AddListener(() => 
+        {
+            OptionsUI.instance.Show();
+                    
+        });
     }
 
     // Start is called before the first frame update
@@ -30,6 +37,7 @@ public class PauseUI : MonoBehaviour
         GameHandler.Instance.OnGamePaused += GameHandler_OnGamePaused;
         GameHandler.Instance.OnGameUnpaused += GameHandler_OnGameUnPaused;
         Hide();
+        
     }
 
     private void GameHandler_OnGamePaused(object sender, System.EventArgs e)

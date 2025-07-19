@@ -27,7 +27,7 @@ public class GameHandler : MonoBehaviour
     [SerializeField] private float waitingtoStartTimer = 1f;
     [SerializeField] private float countdownTimer = 3f;
     [SerializeField] private float gamePlayingTimer;
-    [SerializeField] private float gamePlayingTimerMax = 20f;
+    [SerializeField] private float gamePlayingTimerMax = 120f;
     private bool isGamePaused = false;
 
 

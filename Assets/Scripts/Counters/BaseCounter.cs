@@ -13,6 +13,11 @@ public class BaseCounter : MonoBehaviour , IKitchenObjectParent
 
     public static event EventHandler OnAnyDrop;
 
+
+    public static void ResetStaticData()
+    {
+        OnAnyDrop = null;
+    }
     public virtual void Interact(Player player)
     {
         Debug.LogError("BaseCounter.Interact();");

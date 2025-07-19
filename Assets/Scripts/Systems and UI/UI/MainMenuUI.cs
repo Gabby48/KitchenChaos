@@ -10,6 +10,7 @@ public class MainMenuUI : MonoBehaviour
     [SerializeField] private Button playButton;
     [SerializeField] private Button quitButton;
     
+    
     public static MainMenuUI Instance { get; private set; }
     public event EventHandler OnGamePlay;
     
@@ -37,6 +38,8 @@ public class MainMenuUI : MonoBehaviour
 
     }
 
+
+   
     // Start is called before the first frame update
     void Start()
     {

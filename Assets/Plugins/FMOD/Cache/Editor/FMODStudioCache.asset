@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: ../Kitchen Chaos/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638882505900353371
+  lastModified: 638885077790315957
   FileSizes:
   - Name: Desktop
-    Value: 1751488
+    Value: 1751776
   Exists: 1
 --- !u!114 &-8204348294812271353
 MonoBehaviour:
@@ -89,10 +89,10 @@ MonoBehaviour:
   Path: ../Kitchen Chaos/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638882505900383378
+  lastModified: 638885077790345966
   FileSizes:
   - Name: Desktop
-    Value: 1146
+    Value: 1224
   Exists: 1
 --- !u!114 &-4255717286858922219
 MonoBehaviour:
@@ -233,7 +233,7 @@ MonoBehaviour:
   - {fileID: -8517843902980726384}
   StringsBanks:
   - {fileID: -4590380553618975743}
-  cacheTime: 638882505900383378
+  cacheTime: 638885077790345966
   cacheVersion: 131609
 --- !u!114 &575591649634198745
 MonoBehaviour:

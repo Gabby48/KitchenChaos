@@ -1,23 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMOD.Studio;
 using FMODUnity;
 using UnityEngine.SceneManagement;
 using System;
 
 public class MusicManager : MonoBehaviour
 {
-  
 
-     public StudioEventEmitter musicEvent;
-    
+
+    public StudioEventEmitter musicEvent;
    
 
 
-
+    
 
     private void Awake()
     {
+        
+
         
     }
 
@@ -27,6 +29,7 @@ public class MusicManager : MonoBehaviour
 
     }
 
+  
     
 
 

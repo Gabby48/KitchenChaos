@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
+using FMOD.Studio;
 
 public class SoundManager : MonoBehaviour
 {
-    
+    private const string STORED_SOUND_EFFECTS_VOLUME = "SoundEffectsVolume";
 
     [SerializeField] private FMODUnity.EventReference deliverySuccess;
     [SerializeField] private FMODUnity.EventReference deliveryFailure;
@@ -18,12 +19,47 @@ public class SoundManager : MonoBehaviour
 
 
     public Vector3 cameraposition;
-    
+
+    public Bus soundBus;
+
+
+    private float fullVolume = 1.0f;
+    private float muteVolume = 0f;
+    private float volume = 0.5f;
+    private float volumeStep = 0.1f;
+
     public static SoundManager instance { get; private set; }
 
     private void Awake()
     {
+       volume =  PlayerPrefs.GetFloat(STORED_SOUND_EFFECTS_VOLUME, 0.5f);
+        soundBus = RuntimeManager.GetBus("bus:/Sound");
+        
+
         instance = this;
+
+    }
+
+
+
+    public void ChangeSoundVolume()
+    {
+
+        soundBus.setVolume(volume);
+
+        if (volume >= fullVolume)
+        {
+            volume = muteVolume;
+
+        }
+        else
+        {
+            volume = volume + volumeStep;
+
+        }
+
+        PlayerPrefs.SetFloat(STORED_SOUND_EFFECTS_VOLUME, volume);
+        PlayerPrefs.Save();
 
     }
 
@@ -96,5 +132,11 @@ public class SoundManager : MonoBehaviour
     private void PlaySound(EventReference sound, Vector3 worldPos)
     {
         RuntimeManager.PlayOneShot(sound, worldPos);
+    }
+
+
+    public float GetVolume()
+    {
+        return volume;
     }
 }
