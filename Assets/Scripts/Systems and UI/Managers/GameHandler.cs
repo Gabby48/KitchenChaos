@@ -43,7 +43,7 @@ public class GameHandler : MonoBehaviour
     {
         GameInput.instance.OnPause += GameInput_OnPause;
         gameOverUI.OnStartOver += GameOverUI_OnStartOver;
-       
+      
 
     }
 
