@@ -15,6 +15,8 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private FMODUnity.EventReference drop;
     [SerializeField] private FMODUnity.EventReference trash;
     [SerializeField] private FMODUnity.EventReference footsteps;
+    [SerializeField] private FMODUnity.EventReference warning;
+    [SerializeField] private FMODUnity.EventReference Countdownwarning;
 
 
 
@@ -135,6 +137,15 @@ public class SoundManager : MonoBehaviour
     }
 
 
+    public void PlayCountDownSound()
+    {
+        PlaySound(Countdownwarning, Vector3.zero);
+    }
+
+    public void PlayWarningSound(Vector3 position)
+    {
+        PlaySound(warning, position);
+    }
     public float GetVolume()
     {
         return volume;

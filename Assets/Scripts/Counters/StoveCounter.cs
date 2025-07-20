@@ -7,6 +7,7 @@ public class StoveCounter : BaseCounter, IHasProgress
 {
     [SerializeField] private FryingRecipeSO[] fryingRecipeSOArray;
 
+
     private float fryingTimer;
     private float burningTimer;
     private FryingRecipeSO fryingRecipeSO;
@@ -261,6 +262,11 @@ public class StoveCounter : BaseCounter, IHasProgress
         }
 
 
+    }
+
+    public bool isBurning()
+    {
+        return state == State.Fried;
     }
 
 }

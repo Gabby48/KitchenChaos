@@ -15,11 +15,38 @@ MonoBehaviour:
   Path: ../Kitchen Chaos/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638885077790315957
+  lastModified: 638886248490951611
   FileSizes:
   - Name: Desktop
-    Value: 1751776
+    Value: 1761952
   Exists: 1
+--- !u!114 &-8239154137516980374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/CountdownWarning
+  m_EditorClassIdentifier: 
+  Path: event:/CountdownWarning
+  Guid:
+    Data1: -1728301026
+    Data2: 1212020150
+    Data3: 770326157
+    Data4: -1673941888
+  Banks:
+  - {fileID: -8517843902980726384}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 375
 --- !u!114 &-8204348294812271353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,10 +116,10 @@ MonoBehaviour:
   Path: ../Kitchen Chaos/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638885077790345966
+  lastModified: 638886248490981620
   FileSizes:
   - Name: Desktop
-    Value: 1224
+    Value: 1320
   Exists: 1
 --- !u!114 &-4255717286858922219
 MonoBehaviour:
@@ -228,12 +255,14 @@ MonoBehaviour:
   - {fileID: -2016184600912927989}
   - {fileID: -4255717286858922219}
   - {fileID: -2339931846762776092}
+  - {fileID: 2315753051147314390}
+  - {fileID: -8239154137516980374}
   EditorParameters: []
   MasterBanks:
   - {fileID: -8517843902980726384}
   StringsBanks:
   - {fileID: -4590380553618975743}
-  cacheTime: 638885077790345966
+  cacheTime: 638886248490981620
   cacheVersion: 131609
 --- !u!114 &575591649634198745
 MonoBehaviour:
@@ -262,6 +291,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 187
+--- !u!114 &2315753051147314390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Warning
+  m_EditorClassIdentifier: 
+  Path: event:/Warning
+  Guid:
+    Data1: -1775693191
+    Data2: 1214015913
+    Data3: 2054470819
+    Data4: -1794496224
+  Banks:
+  - {fileID: -8517843902980726384}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 375
 --- !u!114 &4500367992963438617
 MonoBehaviour:
   m_ObjectHideFlags: 0

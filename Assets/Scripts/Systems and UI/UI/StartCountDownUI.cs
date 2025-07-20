@@ -7,8 +7,16 @@ using System;
 public class StartCountDownUI : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI countdownText;
-   
 
+    private const string NUM_POPUP = "NumberPopUp";
+    private Animator animator;
+    private int previousCountDownNum;
+
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
     // Start is called before the first frame update
    private void Start()
     {
@@ -32,7 +40,15 @@ public class StartCountDownUI : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        countdownText.text = Mathf.Ceil(GameHandler.Instance.GetCountDowntoStartTimer()).ToString();
+        int countDownNum = Mathf.CeilToInt(GameHandler.Instance.GetCountDowntoStartTimer());
+        countdownText.text = countDownNum.ToString();
+
+        if(countDownNum != previousCountDownNum)
+        {
+            previousCountDownNum = countDownNum;
+            animator.SetTrigger(NUM_POPUP);
+            SoundManager.instance.PlayCountDownSound();
+        }
 
     }
 
@@ -46,4 +62,6 @@ public class StartCountDownUI : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+
+
 }

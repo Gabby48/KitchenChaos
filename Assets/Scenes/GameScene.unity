@@ -3787,6 +3787,20 @@ MonoBehaviour:
       Data3: -1246670415
       Data4: -1504273097
     Path: event:/Footsteps
+  warning:
+    Guid:
+      Data1: -1775693191
+      Data2: 1214015913
+      Data3: 2054470819
+      Data4: -1794496224
+    Path: event:/Warning
+  Countdownwarning:
+    Guid:
+      Data1: -1728301026
+      Data2: 1212020150
+      Data3: 770326157
+      Data4: -1673941888
+    Path: event:/CountdownWarning
   cameraposition: {x: 0, y: 0, z: 0}
 --- !u!4 &505177926
 Transform:
@@ -6927,7 +6941,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverUI: {fileID: 2064743475}
   stoveCounterSound: {fileID: 949279424}
-  waitingtoStartTimer: 1
   countdownTimer: 3
   gamePlayingTimer: 0
   gamePlayingTimerMax: 120
@@ -11073,6 +11086,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1767144314}
   - component: {fileID: 1767144315}
+  - component: {fileID: 1767144317}
+  - component: {fileID: 1767144316}
   m_Layer: 5
   m_Name: GameStartCountdownUI
   m_TagString: Untagged
@@ -11090,7 +11105,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 141391622}
   m_Father: {fileID: 243612940}
@@ -11114,6 +11129,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdownText: {fileID: 141391623}
+--- !u!225 &1767144316
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767144313}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!95 &1767144317
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767144313}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2d12dc2c636a08c42a25271b2cc63f82, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1773211264
 GameObject:
   m_ObjectHideFlags: 0
