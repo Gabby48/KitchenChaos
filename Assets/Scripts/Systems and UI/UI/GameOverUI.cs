@@ -67,6 +67,7 @@ public class GameOverUI : MonoBehaviour
     private void Show()
     {
         gameObject.SetActive(true);
+        startOver.Select();
     }
 
     private void Hide()

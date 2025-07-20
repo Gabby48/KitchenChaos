@@ -50,6 +50,7 @@ public class GameHandler : MonoBehaviour
     private void GameOverUI_OnStartOver(object sender, EventArgs e)
     {
         Loader.Load(Loader.Scene.GameScene);
+        
         state = State.WaitingtoStart;
     }
 
@@ -99,8 +100,9 @@ public class GameHandler : MonoBehaviour
                 }
                 break;
             case State.GameOver:
-
+                
                 waitingtoStartTimer = 1f;
+               
 
                 break;
 
