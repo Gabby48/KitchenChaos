@@ -42,11 +42,20 @@ public class TutorialUI : MonoBehaviour
     private void Start()
     {
         GameInput.instance.OnRebind += GameInput_OnRebind;
+        GameHandler.Instance.OnGameStateChanged += GameHandler_OnGameStateChanged;
         UpdateVisual();
         Show();
     }
 
 
+    private void GameHandler_OnGameStateChanged(object sender , System.EventArgs e)
+    {
+        if (GameHandler.Instance.isCountdowntoStartActive())
+        {
+            Hide();
+        }
+        
+    }
 
     private void GameInput_OnRebind(object sender, System.EventArgs e)
     {

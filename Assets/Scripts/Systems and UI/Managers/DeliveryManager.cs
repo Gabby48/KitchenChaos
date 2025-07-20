@@ -41,7 +41,7 @@ public class DeliveryManager : MonoBehaviour
         {
             recipeGeneratorTimer = recipeTimerMax;
 
-            if(waitingRecipeSOList.Count < waitingRecipeMax)
+            if(GameHandler.Instance.isGamePlaying() && waitingRecipeSOList.Count < waitingRecipeMax)
             {
                 OrderRecipeSO waitingRecipeSO = recipeListSO.recipeSOList[UnityEngine.Random.Range(0, recipeListSO.recipeSOList.Count)];
                 waitingRecipeSOList.Add(waitingRecipeSO);
