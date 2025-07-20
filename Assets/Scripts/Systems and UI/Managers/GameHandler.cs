@@ -29,6 +29,9 @@ public class GameHandler : MonoBehaviour
     [SerializeField] private float gamePlayingTimerMax = 120f;
     private bool isGamePaused = false;
 
+    [SerializeField] private int playtimeInMinutes;
+    [SerializeField] private int minuteConversion = 60;
+    [SerializeField] private float secondsPlaytime;
 
 
     private void Awake()
@@ -74,6 +77,19 @@ public class GameHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        playtimeInMinutes = Mathf.FloorToInt(gamePlayingTimer/minuteConversion);
+        if(gamePlayingTimer < (gamePlayingTimerMax - 1 ) )
+        {
+            secondsPlaytime = Mathf.Round(gamePlayingTimer - ((float)playtimeInMinutes * minuteConversion));
+        }
+        else
+        {
+            secondsPlaytime = 0;
+            playtimeInMinutes = 2;
+        }
+        
+        
+
         switch (state)
         {
             case State.WaitingtoStart:
@@ -113,8 +129,8 @@ public class GameHandler : MonoBehaviour
 
         }
 
-        
-
+     
+   
     }
 
 
@@ -144,6 +160,16 @@ public class GameHandler : MonoBehaviour
     public float GetPlayingTimerNormalized()
     {
         return  gamePlayingTimer/gamePlayingTimerMax;
+    }
+
+    public int GetTimeinMinutes()
+    {
+        return playtimeInMinutes;
+    }
+
+    public float GetTimeinSecond()
+    {
+        return secondsPlaytime;
     }
  
 
