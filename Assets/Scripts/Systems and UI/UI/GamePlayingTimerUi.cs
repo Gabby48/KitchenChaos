@@ -8,9 +8,13 @@ public class GamePlayingTimerUi : MonoBehaviour
     [SerializeField] private Image clockTimer;
     [SerializeField] private TextMeshProUGUI timerText;
 
+    private string defaultText;
+
 
     private void Awake()
     {
+        
+        defaultText =  timerText.text;
       
     }
 
@@ -28,9 +32,20 @@ public class GamePlayingTimerUi : MonoBehaviour
     private void Update()
     {
       
-        clockTimer.fillAmount = GameHandler.Instance.GetPlayingTimerNormalized();
         
-        timerText.text = GameHandler.Instance.GetTimeinMinutes().ToString() + ":" + GameHandler.Instance.GetTimeinSecond().ToString();
+
+        if (GameHandler.Instance.isGamePlaying())
+        {
+            timerText.text = GameHandler.Instance.GetTimeinMinutesandSeconds();
+            clockTimer.fillAmount = GameHandler.Instance.GetPlayingTimerNormalized();
+        }
+        else
+        {
+            timerText.text = defaultText;
+            clockTimer.fillAmount = 1f;
+
+        }
+        
 
     }
 }

@@ -31,7 +31,8 @@ public class GameHandler : MonoBehaviour
 
     [SerializeField] private int playtimeInMinutes;
     [SerializeField] private int minuteConversion = 60;
-    [SerializeField] private float secondsPlaytime;
+    [SerializeField] private int secondsPlaytime;
+    
 
 
     private void Awake()
@@ -78,15 +79,11 @@ public class GameHandler : MonoBehaviour
     void Update()
     {
         playtimeInMinutes = Mathf.FloorToInt(gamePlayingTimer/minuteConversion);
-        if(gamePlayingTimer < (gamePlayingTimerMax - 1 ) )
-        {
-            secondsPlaytime = Mathf.Round(gamePlayingTimer - ((float)playtimeInMinutes * minuteConversion));
-        }
-        else
-        {
-            secondsPlaytime = 0;
-            playtimeInMinutes = 2;
-        }
+        
+        secondsPlaytime = Mathf.FloorToInt(gamePlayingTimer - ((playtimeInMinutes * minuteConversion)));
+
+        
+       
         
         
 
@@ -162,15 +159,12 @@ public class GameHandler : MonoBehaviour
         return  gamePlayingTimer/gamePlayingTimerMax;
     }
 
-    public int GetTimeinMinutes()
+    public string GetTimeinMinutesandSeconds()
     {
-        return playtimeInMinutes;
+        return string.Format("{0:00}:{1:00}", playtimeInMinutes, secondsPlaytime);
     }
 
-    public float GetTimeinSecond()
-    {
-        return secondsPlaytime;
-    }
+   
  
 
 
